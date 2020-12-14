@@ -6,20 +6,47 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { LugarPage } from '../pages/lugar/lugar';
+import { PerfilPage } from '../pages/perfil/perfil';
+import { TabsPage } from '../pages/tabs/tabs';
+import { TerceraPage } from '../pages/tercera/tercera';
+import { AngularFireModule } from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyAt6vUSXSsMcUCXQ2jA8tTEYfYOeDC9GM4",
+  authDomain: "ionicproject-6f2eb.firebaseapp.com",
+  projectId: "ionicproject-6f2eb",
+  storageBucket: "ionicproject-6f2eb.appspot.com",
+  messagingSenderId: "355423996419",
+  appId: "1:355423996419:web:2a7db1f170c5e5aedd9c36"
+};
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    LugarPage,
+    PerfilPage,
+    TabsPage, 
+    TerceraPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    LugarPage,
+    PerfilPage,
+    TabsPage, 
+    TerceraPage
   ],
   providers: [
     StatusBar,
