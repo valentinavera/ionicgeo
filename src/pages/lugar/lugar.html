@@ -11,7 +11,28 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button color="light" (click)="navigateBack()">Regresar</button>
-  <button ion-button color="light" (click)="navigateToThird()">Ir a tercera</button>
-  {{nombreLugar}}
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input [(ngModel)]="lugar.nombre" type="text" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Dirección</ion-label>
+      <ion-input type="text" [(ngModel)]="lugar.direccion"></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-item>
+        <ion-label>Categoria</ion-label>
+        <ion-select [(ngModel)]="lugar.categoria">
+          <ion-option value="libre">Aire Libre</ion-option>
+          <ion-option value="cerrado">Lugar cerrado</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-label floating>Descripción</ion-label>
+      <ion-textarea [(ngModel)]="lugar.descripcion"></ion-textarea>
+    </ion-item>
+    <button ion-button small full (click)="guardarLugar()">Guardar lugar</button>
+  </ion-list>
 </ion-content>

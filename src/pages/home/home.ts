@@ -7,12 +7,17 @@ import { LugarPage } from '../lugar/lugar';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  lugares: any = [
+    {nombre: 'lugar1', direccion:'calle1', categoria:'1'},
+    {nombre: 'lugar2', direccion:'calle2', categoria:'2'}
+  ];
   constructor(public navCtrl: NavController) {
-
   }
-  navegarALugar(name){
-    this.navCtrl.push(LugarPage, {nombre:name});
+  IrAVistaDetalle(){
+    this.navCtrl.push(LugarPage, {nombre:{}});
+  }
+  IrVistaDetalleExistente(lugar){
+    this.navCtrl.push(LugarPage, {lugar:lugar});
   }
 
 }
